@@ -1,8 +1,10 @@
 // ignore_for_file: file_names
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../AdditionalFiles/rounded_button.dart';
+import '../HomePage.dart';
 
 
 class IntroPage3 extends StatelessWidget {
@@ -14,54 +16,64 @@ class IntroPage3 extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const Center(
-            child: Text(
-              "CHOOSE A TRACK",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
+          const SizedBox(
+            height: 100,
           ),
           const SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            child: RoundedButton(
-              height: 200,
-              width: double.maxFinite,
-              onPressed: () {},
-              color: const Color(0xFF6FB98F),
-              child: const Text(
-                'I WANT TO EARN',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
+            height: 200,
+            child: Image(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/3.png'),
             ),
           ),
-          Expanded(
-            child: RoundedButton(
-              height: 200,
-              width: double.maxFinite,
-              onPressed: () {},
-              color: Colors.white.withOpacity(0.5),
-              child: const Text(
-                'I WANT TO EXPAND MY BUSINESS',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
+          const Spacer(),
+          RichText(
+            text: const TextSpan(
+              children: [
+                TextSpan(
+                  text: "Don't wait in line, ",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
-              ),
+                TextSpan(
+                  text: "Book an appointment",
+                  style: TextStyle(
+                      fontSize: 25,
+                      color: Color(0xFFF50004),
+                      fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
             ),
           ),
-          const SizedBox(
+          const Spacer(),
+          RoundedButton(
             height: 50,
+            width: double.maxFinite,
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).push(
+                CupertinoPageRoute<bool>(
+                  fullscreenDialog: false,
+                  builder: (BuildContext context) => const HomePage(),
+                ),
+              );
+            },
+            color: Colors.red.shade400,
+            child: const Text(
+              'Continue',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 60,
           ),
         ],
       ),

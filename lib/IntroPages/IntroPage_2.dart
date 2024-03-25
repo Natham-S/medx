@@ -10,38 +10,37 @@ class IntroPage2 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Center(
-            child: Text(
-              "FOR BUSINESSES",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
+          const SizedBox(
+            height: 20,
           ),
-          const Image(
-            fit: BoxFit.cover,
-            image: AssetImage('assets/marketing.png'),
+          const SizedBox(
+            height: 500,
+            child: Image(
+              fit: BoxFit.fitWidth,
+              image: AssetImage('assets/2.png'),
+            ),
           ),
           const Spacer(),
           RichText(
             text: const TextSpan(
               children: [
                 TextSpan(
-                  text: "GROW YOUR BUSINESS UPTO 50% WITH OFFERS CART",
+                  text: "We use AI to predict status of your reports ",
                   style: TextStyle(
-                    fontSize: 40,
-                    color: Colors.white,
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
                 TextSpan(
-                  text: ".",
+                  text: "to save time of doctors",
                   style: TextStyle(
-                      fontSize: 50,
-                      color: Color(0xFF6FB98F),
-                      fontWeight: FontWeight.w900),
+                      fontSize: 25,
+                      color: Color(0xFFF50004),
+                      fontWeight: FontWeight.w900,
+                  ),
                 ),
               ],
             ),
