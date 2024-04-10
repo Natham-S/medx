@@ -9,14 +9,12 @@ class RoundedButton extends StatelessWidget {
     required this.onPressed,
     required this.height,
     required this.width,
-    required this.color,
   });
 
   final child;
   final onPressed;
   final double height;
   final double width;
-  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +22,10 @@ class RoundedButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Material(
         elevation: 5.0,
-        color: color,
+        color: const Color(0xFF4E54C8),
         borderRadius: const BorderRadius.all(
           Radius.circular(
-            16,
+            12,
           ),
         ),
         child: MaterialButton(

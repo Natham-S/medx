@@ -85,7 +85,6 @@ class _HomePageState extends State<HomePage> {
                 //   ),
                 // );
               },
-              color: Colors.red.shade400,
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -177,7 +176,6 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
               height: 100,
               width: double.maxFinite,
-              color: Colors.white,
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
