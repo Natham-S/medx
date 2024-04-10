@@ -9,11 +9,17 @@ class TextForm extends StatelessWidget {
     required this.hintText,
     required this.controller,
     this.validator,
+    this.icon,
+    this.preIcon,
+    required this.color,
   });
 
   final String hintText;
   final controller;
   final validator;
+  final icon;
+  final preIcon;
+  final color;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +37,14 @@ class TextForm extends StatelessWidget {
         controller.text = value;
       },
       decoration: InputDecoration(
-        hintText: hintText,
+        suffixIcon: icon,
+      prefixIcon: preIcon,
+      hintText: hintText,
         hintStyle: TextFormTextStyle,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: Colors.black38,
+          borderSide: BorderSide(
+            color: color,
           ),
         ),
         focusedBorder: OutlineInputBorder(

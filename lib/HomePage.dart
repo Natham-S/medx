@@ -1,8 +1,8 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
 
-import 'AdditionalFiles/rounded_button.dart';
+import 'Pages/Home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,196 +12,84 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<Widget> _pages = [
+    const Home(),
+    const Home(),
+    const Home(),
+    const Home(),
+  ];
+
+  int _selectedIndex = 0;
+  void _onItemTap(int index) {
+    setState(
+      () {
+        _selectedIndex = index;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        floatingActionButton: Container(
-          height: 60,
-          width: 200,
-          decoration: BoxDecoration(
-            color: Colors.red.shade400,
-            borderRadius: const BorderRadius.all(
-              Radius.circular(
-                16,
-              ),
+    return Scaffold(
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pages,
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        decoration: const BoxDecoration(
+          color: Color(0xFFE9E4F0),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(
+              32,
             ),
-          ),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon(
-                Icons.add,
-                color: Colors.white,
-              ),
-              Text(
-                "Add Prescription",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              )
-            ],
+            topRight: Radius.circular(
+              32,
+            ),
           ),
         ),
-        body: ListView(
-          padding: const EdgeInsets.all(16),
-          scrollDirection: Axis.vertical,
-          children: [
-            RichText(
-              text: const TextSpan(
-                children: [
-                  TextSpan(
-                    text: "Hi Agam",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  TextSpan(
-                    text: ",",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Color(0xFFF50004),
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                ],
+        child: Theme(
+          data: Theme.of(context).copyWith(
+            splashColor: Colors.transparent,
+          ),
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.shifting,
+            onTap: _onItemTap,
+            currentIndex: _selectedIndex,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            elevation: 0,
+            backgroundColor: Colors.white,
+            iconSize: 30,
+            selectedItemColor: const Color(0xFF4E54C8),
+            unselectedItemColor: Colors.black38,
+            items: [
+              BottomNavigationBarItem(
+                backgroundColor: Colors.grey.withOpacity(0),
+                icon: const Icon(Icons.home),
+                // ignore: deprecated_member_use
+                label: ('Home'),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            RoundedButton(
-              height: 100,
-              width: double.maxFinite,
-              onPressed: () {
-                // Navigator.of(context, rootNavigator: true).push(
-                //   CupertinoPageRoute<bool>(
-                //     fullscreenDialog: false,
-                //     builder: (BuildContext context) => const HomePage(),
-                //   ),
-                // );
-              },
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Book an appointment',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                      Text(
-                        'Q+',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Icon(
-                    Icons.arrow_forward_ios_sharp,
-                    color: Colors.white,
-                  ),
-                ],
+              BottomNavigationBarItem(
+                backgroundColor: Colors.grey.withOpacity(0),
+                icon: const Icon(Icons.file_copy_sharp),
+                // ignore: deprecated_member_use
+                label: ('Files'),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              height: 300,
-              decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.1),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(
-                    16,
-                  ),
-                ),
+              BottomNavigationBarItem(
+                backgroundColor: Colors.grey.withOpacity(0),
+                icon: const Icon(Icons.calendar_month_outlined),
+                // ignore: deprecated_member_use
+                label: ('Appointment'),
               ),
-              child: const Center(
-                child: Text("AI HISTORY (MEDICAL PROFILE)"),
+              BottomNavigationBarItem(
+                backgroundColor: Colors.grey.withOpacity(0),
+                icon: const Icon(Icons.support_agent_outlined),
+                // ignore: deprecated_member_use
+                label: ('Support'),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              height: 100,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(),
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(16),
-                        width: 200,
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(
-                              16,
-                            ),
-                          ),
-                          color: Colors.black.withOpacity(0.1),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Eat more fish, including a portion of oily fish",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            RoundedButton(
-              onPressed: () {},
-              height: 100,
-              width: double.maxFinite,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 80,
-                    child: Image(
-                      image: NetworkImage(
-                        "https://5.imimg.com/data5/SELLER/Default/2022/4/JB/EL/NQ/23010464/natural-neem-leaves.jpg",
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Flexible(
-                    child: Text(
-                      "Drinking neem juice can help reorganize and reboot one’s digestive process.",
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
