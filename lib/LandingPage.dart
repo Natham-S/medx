@@ -21,7 +21,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE9E4F0),
+      backgroundColor: bgColor,
       body: Column(
         children: [
           const Spacer(),
@@ -76,7 +76,7 @@ class _LandingPageState extends State<LandingPage> {
                     effect: const ExpandingDotsEffect(
                       expansionFactor: 3,
                       dotColor: Colors.black26,
-                      activeDotColor: Color(0xFF4E54C8),
+                      activeDotColor: accentColor,
                       radius: 8,
                     ),
                     controller: _controller,

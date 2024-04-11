@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:medx/AdditionalFiles/TextForm.dart';
 import 'package:medx/HomePage.dart';
-
 import '../AdditionalFiles/constants.dart';
 import '../AdditionalFiles/rounded_button.dart';
 import 'Login.dart';
@@ -127,7 +126,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         "Log In",
                         style: TextStyle(
                           decoration: TextDecoration.underline,
-                          color: Color(0xFF4E54C8),
+                          color: accentColor,
                         ),
                       ),
                     ),

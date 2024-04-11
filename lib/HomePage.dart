@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'AdditionalFiles/constants.dart';
 import 'Pages/Home.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
         padding: const EdgeInsets.symmetric(vertical: 8),
         decoration: const BoxDecoration(
-          color: Color(0xFFE9E4F0),
+          color: bgColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(
               32,
@@ -59,9 +60,9 @@ class _HomePageState extends State<HomePage> {
             showSelectedLabels: false,
             showUnselectedLabels: false,
             elevation: 0,
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent,
             iconSize: 30,
-            selectedItemColor: const Color(0xFF4E54C8),
+            selectedItemColor: accentColor,
             unselectedItemColor: Colors.black38,
             items: [
               BottomNavigationBarItem(

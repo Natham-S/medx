@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
+
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
     super.key,
@@ -22,7 +24,7 @@ class RoundedButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Material(
         elevation: 5.0,
-        color: const Color(0xFF4E54C8),
+        color: secondaryColor,
         borderRadius: const BorderRadius.all(
           Radius.circular(
             12,

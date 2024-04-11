@@ -30,7 +30,7 @@ class TextForm extends StatelessWidget {
       keyboardType: TextInputType.name,
       style: const TextStyle(
         fontSize: 16,
-        color: Color(0xFF4E54C8),
+        color: accentColor,
         fontWeight: FontWeight.bold,
       ),
       onChanged: (value) {
@@ -50,7 +50,7 @@ class TextForm extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
-            color: Color(0xFF4E54C8),
+            color: accentColor,
           ),
         ),
       ),

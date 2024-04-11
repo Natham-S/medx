@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:medx/AdditionalFiles/constants.dart';
 
 import 'LandingPage.dart';
 
@@ -44,6 +45,7 @@ class _MyAppState extends State<MyApp> {
             style: TextButton.styleFrom(
               minimumSize: Size.zero,
               padding: EdgeInsets.zero,
+              textStyle: TextButtonTextStyle,
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
           )),

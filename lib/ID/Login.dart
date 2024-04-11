@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                     "Forget Password?",
                     style: TextStyle(
                       decoration: TextDecoration.underline,
-                      color: Color(0xFF4E54C8),
+                      color: accentColor,
                     ),
                   ),
                 ),
@@ -136,7 +136,7 @@ class _LoginState extends State<Login> {
                         "Create Account",
                         style: TextStyle(
                           decoration: TextDecoration.underline,
-                          color: Color(0xFF4E54C8),
+                          color: accentColor,
                         ),
                       ),
                     ),
