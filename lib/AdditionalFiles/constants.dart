@@ -2,8 +2,19 @@
 
 import 'package:flutter/material.dart';
 
+final today = DateTime.now().day;
+final weekday = {
+  1: "Mon",
+  2: "Tues",
+  3: "Wed",
+  4: "Thurs",
+  5: "Fri",
+  6: "Sat",
+  7: "Sun",
+};
+
 const Color accentColor = Color(0xFF337D73);
-const Color bgColor = Color(0xFFE4F3EC);
+const Color bgColor = Color(0xFFFBEFED);
 const Color secondaryColor = Color(0xFFD86453);
 
 const HeadingTextStyle = TextStyle(
@@ -24,6 +35,12 @@ const SubHeadingTextStyle = TextStyle(
   color: Colors.black,
 );
 
+const SubHeadingTextStyle2 = TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+);
+
 
 const FormTextStyle = TextStyle(
   fontSize: 14,
@@ -31,9 +48,21 @@ const FormTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
+const FormTextStyle2 = TextStyle(
+  fontSize: 14,
+  color: Colors.white,
+  fontWeight: FontWeight.w600,
+);
+
 const SubFormTextStyle = TextStyle(
   fontSize: 12,
   color: Colors.black38,
+  fontWeight: FontWeight.w500,
+);
+
+const SubFormTextStyle2 = TextStyle(
+  fontSize: 12,
+  color: Colors.white,
   fontWeight: FontWeight.w500,
 );
 
@@ -46,6 +75,12 @@ const TextFormTextStyle = TextStyle(
 const AppbarTextStyle = TextStyle(
   fontSize: 20,
   color: Colors.black,
+  fontWeight: FontWeight.w600,
+);
+
+const AppbarTextStyle2 = TextStyle(
+  fontSize: 20,
+  color: Colors.white,
   fontWeight: FontWeight.w600,
 );
 

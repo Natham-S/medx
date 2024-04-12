@@ -41,6 +41,10 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           unselectedWidgetColor: Colors.transparent,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.white,
+            surfaceTintColor: Colors.transparent,
+          ),
           textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
               minimumSize: Size.zero,

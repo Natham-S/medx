@@ -1,9 +1,11 @@
 // ignore_for_file: file_names, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-
 import 'AdditionalFiles/constants.dart';
+import 'Pages/Appointments.dart';
 import 'Pages/Home.dart';
+import 'Pages/Support.dart';
+import 'Pages/History.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,9 +17,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = [
     const Home(),
-    const Home(),
-    const Home(),
-    const Home(),
+    const History(),
+    const Appointments(),
+    const Support(),
   ];
 
   int _selectedIndex = 0;

@@ -1,9 +1,12 @@
 // ignore_for_file: file_names, non_constant_identifier_names, curly_braces_in_flow_control_structures
 
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:medx/AdditionalFiles/TextForm.dart';
 import 'package:medx/AdditionalFiles/constants.dart';
+import 'package:medx/Pages/BookAppointment.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -30,13 +33,10 @@ class _HomeState extends State<Home> {
 
   void _updateBorderRadius() {
     setState(() {
-      // Calculate the progress of the scroll offset
       double progress = (_scrollController.offset - 32) / (136 - 32);
 
-      // Apply custom easing curve for smoother transition
       double easedProgress = Curves.easeInOut.transform(progress.clamp(0.0, 1));
 
-      // Interpolate the borderRadius from 0 to 32 based on the progress
       _borderRadius = lerpDouble(0.0, 32.0, easedProgress) ?? 0.0;
     });
   }
@@ -48,9 +48,9 @@ class _HomeState extends State<Home> {
     return Scaffold(
       // floatingActionButton: Container(
       //   height: 60,
-      //   width: 200,
+      //   width: 160,
       //   decoration: const BoxDecoration(
-      //     color: Color(0xFF4E54C8),
+      //     color: accentColor,
       //     borderRadius: BorderRadius.all(
       //       Radius.circular(
       //         16,
@@ -66,11 +66,7 @@ class _HomeState extends State<Home> {
       //       ),
       //       Text(
       //         "Add Prescription",
-      //         style: TextStyle(
-      //           color: Colors.white,
-      //           fontSize: 16,
-      //           fontWeight: FontWeight.w600,
-      //         ),
+      //         style: FormTextStyle2,
       //       )
       //     ],
       //   ),
@@ -231,40 +227,61 @@ class _HomeState extends State<Home> {
                     physics: const BouncingScrollPhysics(),
                     itemCount: 4,
                     itemBuilder: (context, index) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(left: 12, right: 4),
-                            width: 150,
-                            height: 150,
-                            decoration: const BoxDecoration(
-                              color: bgColor,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(
-                                  16,
-                                ),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context, rootNavigator: true).push(
+                            CupertinoPageRoute<bool>(
+                              fullscreenDialog: false,
+                              builder: (BuildContext context) =>
+                                  const BookAppointment(
+                                doctor: 'Dr. Shrestha',
+                                hospital: 'TIET, Patiala',
+                                DocImage: "assets/doctor.png",
                               ),
                             ),
-                          ),
-                          const Padding(
-                            padding:
-                                EdgeInsets.only(left: 12, right: 4, top: 5),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Dr. Shrestha",
-                                  style: FormTextStyle,
+                          );
+                          HapticFeedback.selectionClick();
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 12, right: 4),
+                              padding: const EdgeInsets.only(top: 16),
+                              width: 150,
+                              height: 150,
+                              decoration: const BoxDecoration(
+                                color: bgColor,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                    16,
+                                  ),
                                 ),
-                                Text(
-                                  "TIET, Patiala",
-                                  style: SubFormTextStyle,
-                                )
-                              ],
+                              ),
+                              child: const Image(
+                                image: AssetImage("assets/doctor.png"),
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
-                          ),
-                        ],
+                            const Padding(
+                              padding:
+                                  EdgeInsets.only(left: 12, right: 4, top: 5),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Dr. Shrestha",
+                                    style: FormTextStyle,
+                                  ),
+                                  Text(
+                                    "TIET, Patiala",
+                                    style: SubFormTextStyle,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       );
                     },
                   ),
