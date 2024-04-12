@@ -7,6 +7,7 @@ import 'package:medx/AdditionalFiles/constants.dart';
 import 'LandingPage.dart';
 
 Future<void> main() async {
+  // await FlutterDisplayMode.setHighRefreshRate();
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(

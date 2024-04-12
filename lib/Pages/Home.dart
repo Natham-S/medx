@@ -128,7 +128,7 @@ class _HomeState extends State<Home> {
           ),
           Expanded(
             child: ListView(
-              physics: const BouncingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               controller: _scrollController,
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
@@ -176,6 +176,9 @@ class _HomeState extends State<Home> {
                         onPressed: () {},
                         child: const Text(
                           "See all",
+                          style: TextStyle(
+                            color: accentColor,
+                          ),
                         ),
                       ),
                     ],
