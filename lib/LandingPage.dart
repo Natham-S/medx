@@ -1,3 +1,5 @@
+
+
 // ignore_for_file: file_names
 
 import 'package:flutter/cupertino.dart';
@@ -17,6 +19,31 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   final PageController _controller = PageController();
+  bool isVisible = false;
+
+  @override
+  void initState() {
+    _controller.addListener(_showButton);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _showButton() {
+    if (_controller.page == 2) {
+      setState(() {
+        isVisible = true;
+      });
+    } else {
+      setState(() {
+        isVisible = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +52,11 @@ class _LandingPageState extends State<LandingPage> {
       body: Column(
         children: [
           const Spacer(),
+          Image.asset(
+            "assets/doc.png",
+          ),
           Container(
+            height: MediaQuery.of(context).size.height * 0.4,
             padding: const EdgeInsets.all(
               16,
             ),
@@ -42,8 +73,13 @@ class _LandingPageState extends State<LandingPage> {
             ),
             width: double.maxFinite,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const Text("MedX", style: HeadingTextStyle,),
+                const Text(
+                  "MedX",
+                  style: HeadingTextStyle,
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -56,50 +92,58 @@ class _LandingPageState extends State<LandingPage> {
                     children: const [
                       Text(
                         "We save your data so that you don't face any allergies or miss your medications",
+                        textAlign: TextAlign.center,
                         style: TaglinesTextStyle,
                       ),
                       Text(
                         "We use AI to predict status of your reports to save time of doctors",
                         style: TaglinesTextStyle,
+                        textAlign: TextAlign.center,
                       ),
                       Text(
                         "Don't wait in line, Book an appointment",
                         style: TaglinesTextStyle,
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.only(bottom: 32),
-                  alignment: Alignment.bottomCenter,
-                  child: SmoothPageIndicator(
-                    effect: const ExpandingDotsEffect(
-                      expansionFactor: 3,
-                      dotColor: Colors.black26,
-                      activeDotColor: accentColor,
-                      radius: 8,
+                Visibility(
+                  visible: !isVisible,
+                  child: Container(
+                    height: 50,
+                    alignment: Alignment.bottomCenter,
+                    child: SmoothPageIndicator(
+                      effect: const ExpandingDotsEffect(
+                        expansionFactor: 3,
+                        dotColor: Colors.black26,
+                        activeDotColor: accentColor,
+                        radius: 8,
+                      ),
+                      controller: _controller,
+                      count: 3,
+                      axisDirection: Axis.horizontal,
                     ),
-                    controller: _controller,
-                    count: 3,
-                    axisDirection: Axis.horizontal,
                   ),
                 ),
-                RoundedButton(
-                  onPressed: () {
-                    Navigator.of(context, rootNavigator: true).push(
-                      CupertinoPageRoute<bool>(
-                        fullscreenDialog: false,
-                        builder: (BuildContext context) =>
-                            const Login(),
-                      ),
-                    );
-                    HapticFeedback.selectionClick();
-                  },
-                  height: 50,
-                  width: double.maxFinite,
-                  child: const Text(
-                    "Get Started",
-                    style: ButtonTextStyle,
+                Visibility(
+                  visible: isVisible,
+                  child: RoundedButton(
+                    onPressed: () {
+                      Navigator.of(context, rootNavigator: true).push(
+                        CupertinoPageRoute<bool>(
+                          fullscreenDialog: false,
+                          builder: (BuildContext context) => const Login(),
+                        ),
+                      );
+                      HapticFeedback.selectionClick();
+                    },
+                    height: 50,
+                    width: double.maxFinite,
+                    child: const Text(
+                      "Get Started",
+                      style: ButtonTextStyle,
+                    ),
                   ),
                 ),
               ],

@@ -20,25 +20,22 @@ class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Material(
-        elevation: 5.0,
-        color: secondaryColor,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(
-            12,
-          ),
+    return Material(
+      elevation: 5.0,
+      color: secondaryColor,
+      borderRadius: const BorderRadius.all(
+        Radius.circular(
+          12,
         ),
-        child: MaterialButton(
-          splashColor: Colors.transparent,
-          hoverColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-          onPressed: onPressed,
-          minWidth: width,
-          height: height,
-          child: child,
-        ),
+      ),
+      child: MaterialButton(
+        splashColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        onPressed: onPressed,
+        minWidth: width,
+        height: height,
+        child: child,
       ),
     );
   }

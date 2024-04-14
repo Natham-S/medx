@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: Colors.grey.withOpacity(0),
                 icon: const Icon(Icons.file_copy_sharp),
                 // ignore: deprecated_member_use
-                label: ('Files'),
+                label: ('History'),
               ),
               BottomNavigationBarItem(
                 backgroundColor: Colors.grey.withOpacity(0),

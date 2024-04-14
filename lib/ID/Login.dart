@@ -45,10 +45,6 @@ class _LoginState extends State<Login> {
                 "Welcome",
                 style: SubHeadingTextStyle,
               ),
-              const Text(
-                "Please fill the details to create an account",
-                style: FormTextStyle,
-              ),
               const SizedBox(
                 height: 20,
               ),
