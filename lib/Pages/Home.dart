@@ -1,10 +1,15 @@
 // ignore_for_file: file_names, non_constant_identifier_names, curly_braces_in_flow_control_structures
 
 import 'dart:ui';
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:medx/AdditionalFiles/TextForm.dart';
 import 'package:medx/AdditionalFiles/constants.dart';
 import 'package:medx/AdditionalFiles/rounded_button.dart';
+
+import 'Ambulance.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -42,7 +47,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     TextEditingController SearchController = TextEditingController();
-
+    CountDownController CountdownController = CountDownController();
     return Scaffold(
       // floatingActionButton: Container(
       //   height: 60,
@@ -264,8 +269,35 @@ class _HomeState extends State<Home> {
                                             textAlign: TextAlign.center,
                                           ),
                                           const Spacer(),
-                                          const CircleAvatar(
-                                            radius: 80,
+                                          CircularCountDownTimer(
+                                            controller: CountdownController,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width /
+                                                3,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .width /
+                                                3,
+                                            textStyle: SubHeadingTextStyle,
+                                            duration: 10,
+                                            autoStart: true,
+                                            isReverse: true,
+                                            isReverseAnimation: true,
+                                            fillColor: secondaryColor,
+                                            ringColor: bgColor,
+                                            strokeWidth: 10.0,
+                                            strokeCap: StrokeCap.round,
+                                            onComplete: () {
+                                              Navigator.pop(context);
+                                              Navigator.of(context, rootNavigator: true).push(
+                                                CupertinoPageRoute<bool>(
+                                                  fullscreenDialog: false,
+                                                  builder: (BuildContext context) => const Ambulance(),
+                                                ),
+                                              );
+                                              HapticFeedback.vibrate();
+                                            },
                                           ),
                                           const Spacer(),
                                           RoundedButton(
@@ -293,19 +325,19 @@ class _HomeState extends State<Home> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 125,
-                                backgroundColor: Colors.red.withOpacity(0.1),
+                                radius: 100,
+                                backgroundColor: Colors.red.withOpacity(0.05),
                                 child: CircleAvatar(
-                                  radius: 100,
-                                  backgroundColor: Colors.red.withOpacity(0.2),
+                                  radius: 80,
+                                  backgroundColor: Colors.red.withOpacity(0.075),
                                   child: CircleAvatar(
-                                    radius: 75,
+                                    radius: 60,
                                     backgroundColor:
-                                        Colors.red.withOpacity(0.25),
+                                        Colors.red.withOpacity(0.1),
                                     child: CircleAvatar(
-                                      radius: 50,
+                                      radius: 40,
                                       backgroundColor:
-                                          Colors.red.withOpacity(0.4),
+                                          Colors.red.withOpacity(0.15),
                                       child: Container(
                                         margin: const EdgeInsets.all(8),
                                         decoration: const BoxDecoration(
