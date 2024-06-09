@@ -2,11 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:medx/AdditionalFiles/constants.dart';
 
+import 'Constants.dart';
 import 'LandingPage.dart';
 
 Future<void> main() async {
+  Gemini.init(apiKey: GEMINI_API_KEY);
   // await FlutterDisplayMode.setHighRefreshRate();
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
@@ -22,6 +25,7 @@ Future<void> main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
     return runApp(
+
       const MyApp(),
     );
   });

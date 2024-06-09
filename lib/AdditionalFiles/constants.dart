@@ -14,8 +14,8 @@ final weekday = {
 };
 
 const Color accentColor = Color(0xFF337D73);
-const Color bgColor = Color(0xFFFBEFED);
-const Color secondaryColor = Color(0xFFD86453);
+const Color bgColor = Color(0xFFEDFBF1);
+const Color secondaryColor = Color(0xFFA497FF);
 
 const HeadingTextStyle = TextStyle(
   fontSize: 30,
@@ -30,9 +30,9 @@ const TextButtonTextStyle = TextStyle(
 );
 
 const SubHeadingTextStyle = TextStyle(
-  fontSize: 25,
+  fontSize: 24,
   fontWeight: FontWeight.bold,
-  color: Colors.black,
+  color: Colors.black87,
 );
 
 const SubHeadingTextStyle2 = TextStyle(
@@ -67,9 +67,9 @@ const SubFormTextStyle2 = TextStyle(
 );
 
 const TextFormTextStyle = TextStyle(
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w400,
   fontSize: 16,
-  color: Colors.black38,
+  color: Colors.black87,
 );
 
 const AppbarTextStyle = TextStyle(

@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:medx/AdditionalFiles/TextForm.dart';
 import 'package:medx/AdditionalFiles/constants.dart';
 import 'package:medx/AdditionalFiles/rounded_button.dart';
+import 'package:medx/IDCard.dart';
 
 import 'Ambulance.dart';
 
@@ -98,32 +99,23 @@ class _HomeState extends State<Home> {
                       text: const TextSpan(
                         children: [
                           TextSpan(
-                            text: 'Hello',
+                            text: 'Good Morning!',
                             style: FormTextStyle,
                           ),
-                          TextSpan(
-                            text: ',',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: accentColor,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
+
                         ],
                       ),
                     ),
                     const Text(
-                      "Hope you are doing well",
-                      style: FormTextStyle,
-                    ),
-                    const Text(
-                      "Mr. Agam",
+                      "Mr. HackPrix",
                       style: SubHeadingTextStyle,
                     ),
                   ],
                 ),
                 const CircleAvatar(
                   backgroundColor: secondaryColor,
+                  backgroundImage: NetworkImage('https://www.deccanchronicle.com/h-upload/2024/06/07/1095571-screenshot2024-06-07at74831pm.webp'),
+
                   radius: 25,
                 ),
               ],
@@ -136,6 +128,7 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.zero,
               scrollDirection: Axis.vertical,
               children: [
+
                 Container(
                   width: double.maxFinite,
                   padding: const EdgeInsets.only(
@@ -151,6 +144,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
+
                   child: TextForm(
                     preIcon: const Icon(
                       Icons.search_sharp,
@@ -194,7 +188,7 @@ class _HomeState extends State<Home> {
                     scrollDirection: Axis.horizontal,
                     padding: EdgeInsets.zero,
                     physics: const BouncingScrollPhysics(),
-                    itemCount: 4,
+                    itemCount: 1,
                     itemBuilder: (context, index) {
                       return Container(
                         margin: const EdgeInsets.only(left: 12, right: 4),
@@ -217,6 +211,22 @@ class _HomeState extends State<Home> {
                     },
                   ),
                 ),
+                SizedBox(height: 18,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 4),
+                  child: Text("Identity",style: AppbarTextStyle),
+                ),
+                Container(
+                  margin: EdgeInsets.all(12),
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFDBE0FF),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+
+                  child: IDCard(),
+                ),
+                
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
@@ -260,7 +270,7 @@ class _HomeState extends State<Home> {
                                             height: 10,
                                           ),
                                           const Text(
-                                            "Agam, are you okay ?",
+                                            "HackPrix, are you okay ?",
                                             style: SubHeadingTextStyle,
                                           ),
                                           const Text(
@@ -436,11 +446,12 @@ class _HomeState extends State<Home> {
                     style: AppbarTextStyle,
                   ),
                 ),
+                SizedBox(height: 8,),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                    style: TextFormTextStyle,
+                    "I have a history of hypertension, diagnosed in 2015, Type 2 diabetes, diagnosed in 2018, and hyperlipidemia, diagnosed in 2020. In the past, I had an appendectomy in 2005 and have had seasonal allergies since childhood. Currently, I take Metformin for diabetes, Lisinopril for hypertension, Atorvastatin for hyperlipidemia, and Cetirizine as needed for allergies. I am allergic to penicillin, which causes a rash, and peanuts, which cause anaphylaxis. My family medical history includes my father having hypertension and Type 2 diabetes, while my mother had breast cancer and passed away at 65. I do not smoke, I consume alcohol occasionally (1-2 drinks per week), and I exercise regularly, including jogging and weight lifting. I follow a balanced, low-sugar diet. Surgically, I had an appendectomy in 2005 and my wisdom teeth removed in 1998. I have not had any recent hospitalizations. My immunizations are up to date, including annual influenza vaccines, a tetanus booster in 2022, and a COVID-19 vaccine in 2021. Recent lab results show my HbA1c level is 7.2%, my blood pressure is 130/80 mmHg, and my LDL cholesterol is 110 mg/dL. I maintain a low-carb, high-fiber diet and engage in regular physical activity. I report occasional work-related stress and practice mindfulness and relaxation techniques. My recommendations are to continue my current medication regimen, follow up with my endocrinologist for diabetes management, have annual physical exams, regularly monitor my blood pressure and cholesterol, and maintain my exercise and diet routine.",
+                         style: TextFormTextStyle,
                   ),
                 ),
               ],

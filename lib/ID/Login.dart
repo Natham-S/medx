@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
                 height: 20,
               ),
               TextForm(
-                hintText: "Enter Roll number",
+                hintText: "Username",
                 color: Colors.black38,
                 controller: RollnumberController,
               ),
@@ -59,7 +59,10 @@ class _LoginState extends State<Login> {
               TextForm(
                 hintText: "Create Password",
                 color: Colors.black38,
+
+
                 controller: PasswordController,
+
                 icon: GestureDetector(
                   onTap: () {
                     setState(() {
@@ -69,8 +72,10 @@ class _LoginState extends State<Login> {
                   child: Icon(
                     (passwordVisibility) ? Icons.visibility_outlined : Icons.visibility_off_outlined,
                           color: Colors.black38,
-                        ),
+                    ),
+
                 ),
+
               ),
               const SizedBox(
                 height: 10,

@@ -39,15 +39,16 @@ class _HomePageState extends State<HomePage> {
         children: _pages,
       ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.all(8),
+
         decoration: const BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(
-              32,
+              28,
             ),
             topRight: Radius.circular(
-              32,
+              28,
             ),
           ),
         ),
@@ -63,33 +64,34 @@ class _HomePageState extends State<HomePage> {
             showUnselectedLabels: false,
             elevation: 0,
             backgroundColor: Colors.transparent,
-            iconSize: 30,
+            iconSize: 28,
             selectedItemColor: accentColor,
             unselectedItemColor: Colors.black38,
             items: [
               BottomNavigationBarItem(
                 backgroundColor: Colors.grey.withOpacity(0),
                 icon: const Icon(Icons.home),
-                // ignore: deprecated_member_use
                 label: ('Home'),
               ),
               BottomNavigationBarItem(
                 backgroundColor: Colors.grey.withOpacity(0),
-                icon: const Icon(Icons.file_copy_sharp),
+                icon: const Icon(Icons.paste),
                 // ignore: deprecated_member_use
                 label: ('History'),
               ),
               BottomNavigationBarItem(
                 backgroundColor: Colors.grey.withOpacity(0),
-                icon: const Icon(Icons.calendar_month_outlined),
+                icon: const Icon(Icons.access_time),
                 // ignore: deprecated_member_use
                 label: ('Appointment'),
               ),
               BottomNavigationBarItem(
                 backgroundColor: Colors.grey.withOpacity(0),
-                icon: const Icon(Icons.support_agent_outlined),
+                icon: const Icon(Icons.chat),
                 // ignore: deprecated_member_use
                 label: ('Support'),
+
+
               ),
             ],
           ),

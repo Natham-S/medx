@@ -52,7 +52,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 height: 20,
               ),
               TextForm(
-                hintText: "Enter Roll number",
+                hintText: "Username",
                 color: Colors.black38,
                 controller: RollnumberController,
               ),
