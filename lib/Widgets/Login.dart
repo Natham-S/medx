@@ -3,12 +3,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medx/HomePage.dart';
-import 'package:medx/ID/CreateAccount.dart';
+import 'package:medx/Screens/HomePage.dart';
+import 'package:medx/Widgets/CreateAccount.dart';
 
-import '../AdditionalFiles/TextForm.dart';
-import '../AdditionalFiles/constants.dart';
-import '../AdditionalFiles/rounded_button.dart';
+import '../Utils/TextForm.dart';
+import '../Utils/constants.dart';
+import '../Utils/rounded_button.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

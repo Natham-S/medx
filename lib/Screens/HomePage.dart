@@ -1,11 +1,11 @@
 // ignore_for_file: file_names, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-import 'AdditionalFiles/constants.dart';
-import 'Pages/Appointments.dart';
-import 'Pages/Home.dart';
-import 'Pages/Support.dart';
-import 'Pages/History.dart';
+import '../Utils/constants.dart';
+import 'Appointments.dart';
+import 'Home.dart';
+import 'Support.dart';
+import 'History.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import '../AdditionalFiles/constants.dart';
+import '../Utils/constants.dart';
 
 import 'dart:io';
 import 'dart:typed_data';

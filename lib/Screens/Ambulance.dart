@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medx/AdditionalFiles/constants.dart';
-import 'package:medx/AdditionalFiles/rounded_button.dart';
+import 'package:medx/Utils/constants.dart';
+import 'package:medx/Utils/rounded_button.dart';
+
 
 class Ambulance extends StatelessWidget {
   const Ambulance({super.key});

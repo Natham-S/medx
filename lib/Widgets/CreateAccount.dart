@@ -3,10 +3,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medx/AdditionalFiles/TextForm.dart';
-import 'package:medx/HomePage.dart';
-import '../AdditionalFiles/constants.dart';
-import '../AdditionalFiles/rounded_button.dart';
+import 'package:medx/Utils/TextForm.dart';
+import 'package:medx/Screens/HomePage.dart';
+import '../Utils/constants.dart';
+import '../Utils/rounded_button.dart';
 import 'Login.dart';
 
 class CreateAccount extends StatefulWidget {

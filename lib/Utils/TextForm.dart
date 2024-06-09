@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-import 'package:medx/AdditionalFiles/constants.dart';
+import 'package:medx/Utils/constants.dart';
 
 class TextForm extends StatelessWidget {
   const TextForm({

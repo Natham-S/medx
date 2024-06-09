@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, non_constant_identifier_names, file_names
 
 import 'package:flutter/material.dart';
-import 'package:medx/AdditionalFiles/DraggableSheet.dart';
-import 'package:medx/AdditionalFiles/constants.dart';
-import 'package:medx/AdditionalFiles/rounded_button.dart';
+import 'package:medx/Utils/DraggableSheet.dart';
+import 'package:medx/Utils/constants.dart';
+import 'package:medx/Utils/rounded_button.dart';
 
 class BookAppointment extends StatefulWidget {
   final String doctor;

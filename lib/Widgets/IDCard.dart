@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'AdditionalFiles/constants.dart';
+import '../Utils/constants.dart';
 
 class IDCard extends StatelessWidget{
   const IDCard({super.key});

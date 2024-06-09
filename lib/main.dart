@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
-import 'package:medx/AdditionalFiles/constants.dart';
+import 'package:medx/Utils/constants.dart';
 
-import 'Constants.dart';
-import 'LandingPage.dart';
+import 'api/Constants.dart';
+import 'Screens/LandingPage.dart';
 
 Future<void> main() async {
   Gemini.init(apiKey: GEMINI_API_KEY);

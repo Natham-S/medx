@@ -5,9 +5,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medx/AdditionalFiles/constants.dart';
-import 'package:medx/AdditionalFiles/rounded_button.dart';
-import 'package:medx/ID/Login.dart';
+import 'package:medx/Utils/constants.dart';
+import 'package:medx/Utils/rounded_button.dart';
+import 'package:medx/Widgets/Login.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class LandingPage extends StatefulWidget {

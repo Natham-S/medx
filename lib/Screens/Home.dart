@@ -5,10 +5,10 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medx/AdditionalFiles/TextForm.dart';
-import 'package:medx/AdditionalFiles/constants.dart';
-import 'package:medx/AdditionalFiles/rounded_button.dart';
-import 'package:medx/IDCard.dart';
+import 'package:medx/Utils/TextForm.dart';
+import 'package:medx/Utils/constants.dart';
+import 'package:medx/Utils/rounded_button.dart';
+import 'package:medx/Widgets/IDCard.dart';
 
 import 'Ambulance.dart';
 
